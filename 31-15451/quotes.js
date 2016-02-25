@@ -88,7 +88,3 @@ var getQuoteFromDB = module.exports.getQuoteFromDB = function(cb,index){
 
 
 
-
-
-
-

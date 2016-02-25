@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>Inspire Me!</title>
+	<script src="js/jquery-1.11.3.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class=container>
+		<h1 id="quote">Click or tap on the page to get inspired!</h1>
+		
+	</div>
+	<h1 id="author"></h1>
+
+</body>
+
+</html>
+
+
+<style>
+	@font-face {
+    	font-family: 'quote_font'; /*a name to be used later*/
+    	src: url('fonts/quotes.ttf'); /*URL to font*/
+	}
+	@font-face {
+    	font-family: 'author_font'; /*a name to be used later*/
+    	src: url('fonts/author.ttf'); /*URL to font*/
+	}
+	body{
+		cursor: pointer;
+		padding-top: 20%;
+		padding-left: 50px;
+		padding-right: 50px;
+		background-color: #FAEBD7;
+		text-align: center;
+	}
+	#quote{
+		text-align: center;
+		font-family: 'quote_font';
+	}
+
+	#author{
+		font-family: 'author_font';
+		position: absolute;
+		right: 40px;
+		bottom: 40px;
+		font-size: 50px;
+	}
+</style>
+
+<script>
+	$('body').click(function(){
+		var r = Math.floor(Math.random()*256);
+		var g = Math.floor(Math.random()*256);
+		var b = Math.floor(Math.random()*256);
+		$('body').css('background-color',"rgb("+r+","+g+","+b+")");
+
+
+		$.getJSON( "api/quote", function( data ) {
+			var text = data.text;
+			var author = data.author;
+			$('#quote').html(text);
+			$('#author').html(author);
+		});
+	});
+</script>
