@@ -19,7 +19,7 @@ var getQuotesFromJSON = module.exports.getQuotesFromJSON = function(){
 
 
 
-var getQuoteFromJSON = module.exports.getQuoteFromDB = function (index){
+var getQuoteFromJSON = module.exports.getQuoteFromJSON = function (index){
 	var all_quotes = getQuotesFromJSON();
 	return getElementByIndexElseRandom(all_quotes,index);
 }
@@ -60,21 +60,21 @@ getQuotesFromDB = module.exports.getQuotesFromDB = function(cb){
 	
 }
 
-var getQuoteFromDB = module.exports.getgetQuoteFromDB = function(cb,index){
+var getQuoteFromDB = module.exports.getQuoteFromDB = function(cb,index){
 	getQuotesFromDB(function(err, docs){
 		var quote = getElementByIndexElseRandom(docs,index);
 		cb(err,quote);
 	});
 }
 
-getQuotesFromDB(function(err,docs){
-	if(!err)
-		console.log(docs);
-});
+// getQuotesFromDB(function(err,docs){
+// 	if(!err)
+// 		console.log(docs);
+// });
 
-// getQuoteFromDB(function(err, quote){
-// 	console.log(quote);
-// },2);
+// // getQuoteFromDB(function(err, quote){
+// // 	console.log(quote);
+// // },2);
 
 // seed(function(err, seeded){
 // 	if(seeded)
