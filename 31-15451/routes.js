@@ -3,8 +3,12 @@ var quotes = require('./quotes');
 var router = express.Router();
 
 
-router.get('/random_quote',function(req,res){
-	res.send('This is a quote');
+router.get('/',function(req,res){
+	res.render('index');
+});
+
+router.get('/index.html',function(req,res){
+	res.render('index');
 });
 
 router.get('/index',function(req,res){
