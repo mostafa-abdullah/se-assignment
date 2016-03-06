@@ -1,0 +1,31 @@
+@font-face {
+    	font-family: 'quote_font'; /*a name to be used later*/
+    	src: url('../fonts/quotes.ttf'); /*URL to font*/
+	}
+@font-face {
+	font-family: 'author_font'; /*a name to be used later*/
+	src: url('../fonts/author.ttf'); /*URL to font*/
+}
+body{
+	cursor: pointer;
+	padding-top: 20%;
+	padding-left: 50px;
+	padding-right: 50px;
+	background-color: #156639;
+	text-align: center;
+}
+#quote{
+	text-align: center;
+	font-family: 'quote_font';
+	color: white;
+	user-select: false;
+}
+
+#author{
+	font-family: 'author_font';
+	position: absolute;
+	right: 40px;
+	bottom: 40px;
+	font-size: 50px;
+	color: white;
+}
